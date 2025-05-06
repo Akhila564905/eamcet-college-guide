@@ -1,0 +1,107 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Make full layout fit in one screen */
+  body, html {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #004080;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .nav a:hover {
+    background-color: #0059b3;
+  }
+  
+  .arrow {
+    margin-left: 5px;
+  }
+  
+  /* Hero Section - adjusted height to fit on one screen */
+  .hero {
+    background-image: url('https://images.shiksha.com/mediadata/images/1552297835phpOjjVu2.jpeg');
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .welcome-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .welcome-text h1 {
+    color: white;
+    font-size: 26px;
+    text-align: center;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+  }
+
+
+  /* Hero Section with Background Image */
+.hero {
+    background-image: url('https://c8.alamy.com/comp/WAE400/college-campus-as-blurry-background-behind-decoration-of-book-and-accessory-WAE400.jpg');
+    background-size: cover; /* Ensures the image covers the section without distortion */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    height: 400px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color for the welcome message */
+  }
+  
+  .welcome-text h1 {
+    text-align: center; /* Centers the text */
+    font-size: 36px; /* Adjust the size of the text */
+    margin: 0;
+  }
+  

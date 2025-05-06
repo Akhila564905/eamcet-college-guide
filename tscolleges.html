@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TS Colleges Explorer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #555;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    nav button:hover, nav button.active {
+      background: #444;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .search-bar {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    .search-bar input {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .college-list {
+      display: none;
+    }
+    .college-list.active {
+      display: block;
+    }
+    .sub-nav {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .sub-tab {
+      background: #ccc;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .sub-tab.active {
+      background: #aaa;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .details {
+      background: #f9f9f9;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      border-left: 4px solid #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TS Colleges Explorer</h1>
+  </header>
+
+  <nav>
+    <button class="tab active" data-target="universities">Universities</button>
+    <button class="tab" data-target="private">Private</button>
+    <button class="tab" data-target="government">Government</button>
+    <button class="tab" data-target="affiliated">Affiliated</button>
+  </nav>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search colleges...">
+    </div>
+
+    <!-- Universities Tab -->
+    <div id="universities" class="college-list active">
+      <div class="sub-nav">
+        <button class="sub-tab active" data-sub="central">Central Universities</button>
+        <button class="sub-tab" data-sub="state">State Universities</button>
+        <button class="sub-tab" data-sub="private-public">Private/Public Universities</button>
+      </div>
+
+      <!-- Central Universities -->
+      <div id="central" class="sub-list">
+        <ul>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('iith')"> IIT Hyderabad</label>
+            <div id="iith" class="details" style="display:none;">
+              <p><strong>Location:</strong> Sangareddy</p>
+              <p><strong>Fee:</strong> ₹2,00,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> JEE Adv 2024: Rank 431–652</p>
+              <p><strong>Website:</strong> <a href="https://www.iith.ac.in" target="_blank">iith.ac.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('nitw')"> NIT Warangal</label>
+            <div id="nitw" class="details" style="display:none;">
+              <p><strong>Location:</strong> Warangal</p>
+              <p><strong>Fee:</strong> ₹90,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: Rank 731–1899</p>
+              <p><strong>Website:</strong> <a href="https://www.nitw.ac.in" target="_blank">nitw.ac.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('iiith')"> IIIT Hyderabad</label>
+            <div id="iiith" class="details" style="display:none;">
+              <p><strong>Location:</strong> Gachibowli, Hyderabad</p>
+              <p><strong>Fee:</strong> ₹4,50,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: Rank 2199–3550</p>
+              <p><strong>Website:</strong> <a href="https://www.iiit.ac.in" target="_blank">iiit.ac.in</a></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- State Universities -->
+      <div id="state" class="sub-list" style="display: none;">
+        <ul>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('jntuh')"> Jawaharlal Nehru Technological University, Hyderabad (JNTUH)</label>
+            <div id="jntuh" class="details" style="display:none;">
+              <p><strong>Location:</strong> Hyderabad</p>
+              <p><strong>Established:</strong> 1972</p>
+              <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> Rank 15,000–30,000 (JEE Main 2024)</p>
+              <p><strong>Website:</strong> <a href="https://www.jntuh.ac.in" target="_blank">jntuh.ac.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('ku')"> Kakatiya University</label>
+            <div id="ku" class="details" style="display:none;">
+              <p><strong>Location:</strong> Warangal</p>
+              <p><strong>Established:</strong> 1976</p>
+              <p><strong>Fee:</strong> ₹60,000–₹80,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> Rank 30,000–40,000 (JEE Main 2024)</p>
+              <p><strong>Website:</strong> <a href="https://www.kakatiya.ac.in" target="_blank">kakatiya.ac.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('osmania')"> Osmania University</label>
+            <div id="osmania" class="details" style="display:none;">
+              <p><strong>Location:</strong> Hyderabad</p>
+              <p><strong>Established:</strong> 1918</p>
+              <p><strong>Fee:</strong> ₹50,000–₹70,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> Rank 20,000–35,000 (JEE Main 2024)</p>
+              <p><strong>Website:</strong> <a href="https://www.osmania.ac.in" target="_blank">osmania.ac.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('rgukt')"> Rajiv Gandhi University of Knowledge Technologies (RGUKT)</label>
+            <div id="rgukt" class="details" style="display:none;">
+              <p><strong>Location:</strong> Basar, Telangana</p>
+              <p><strong>Established:</strong> 2008</p>
+              <p><strong>Fee:</strong> ₹1,00,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> Admissions through a separate entrance exam</p>
+              <p><strong>Website:</strong> <a href="https://www.rgukt.in" target="_blank">rgukt.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('satavahana')"> Satavahana University</label>
+            <div id="satavahana" class="details" style="display:none;">
+              <p><strong>Location:</strong> Karimnagar</p>
+              <p><strong>Established:</strong> 2008</p>
+              <p><strong>Fee:</strong> ₹50,000–₹75,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> Rank 35,000–50,000 (JEE Main 2024)</p>
+              <p><strong>Website:</strong> <a href="https://www.satavahana.ac.in" target="_blank">satavahana.ac.in</a></p>
+            </div>
+          </li>
+          <li>
+            <label><input type="radio" name="uni-info" onclick="showDetails('telangana')"> Telangana University</label>
+            <div id="telangana" class="details" style="display:none;">
+              <p><strong>Location:</strong> Nizamabad</p>
+              <p><strong>Established:</strong> 2006</p>
+              <p><strong>Fee:</strong> ₹40,000–₹70,000/year</p>
+              <p><strong>Cutoff (CSE - Gen):</strong> Rank 40,000–60,000 (JEE Main 2024)</p>
+              <p><strong>Website:</strong> <a href="https://www.telanganauniversity.ac.in" target="_blank">telanganauniversity.ac.in</a></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Private/Public Universities -->
+      <div id="private-public" class="sub-list" style="display: none;">
+        <ul>
+          <li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('vfstr')"> Vignan's Foundation for Science, Technology & Research (VFSTR)</label>
+  <div id="vfstr" class="details" style="display:none;">
+    <p><strong>Location:</strong> Guntur (Near Telangana border)</p>
+    <p><strong>Fee:</strong> ₹1,50,000–₹2,00,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 15,000–30,000</p>
+    <p><strong>Website:</strong> <a href="https://www.vignan.edu" target="_blank">vignan.edu</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('shivnadar')"> Shiv Nadar University, Hyderabad</label>
+  <div id="shivnadar" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹2,00,000–₹2,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main or SNUSAT: 5,000–15,000</p>
+    <p><strong>Website:</strong> <a href="https://www.snu.edu.in" target="_blank">snu.edu.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('ifhe')"> ICFAI Foundation for Higher Education (IFHE)</label>
+  <div id="ifhe" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹2,00,000–₹3,00,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 10,000–25,000</p>
+    <p><strong>Website:</strong> <a href="https://www.ifheindia.org" target="_blank">ifheindia.org</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('cbit')"> Chaitanya Bharathi Institute of Technology (CBIT)</label>
+  <div id="cbit" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 15,000–30,000</p>
+    <p><strong>Website:</strong> <a href="https://www.cbit.ac.in" target="_blank">cbit.ac.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('griet')"> Gokaraju Rangaraju Institute of Engineering and Technology (GRIET)</label>
+  <div id="griet" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 15,000–25,000</p>
+    <p><strong>Website:</strong> <a href="https://www.griet.ac.in" target="_blank">griet.ac.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('vasavi')"> Vasavi College of Engineering</label>
+  <div id="vasavi" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 15,000–30,000</p>
+    <p><strong>Website:</strong> <a href="https://www.vasavi.edu.in" target="_blank">vasavi.edu.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('stmarys')"> St. Mary's Group of Institutions</label>
+  <div id="stmarys" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹90,000–₹1,20,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 25,000–40,000</p>
+    <p><strong>Website:</strong> <a href="https://www.stmarys.ac.in" target="_blank">stmarys.ac.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('mvsr')"> MVSR Engineering College</label>
+  <div id="mvsr" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad (Nadergul)</p>
+    <p><strong>Fee:</strong> ₹90,000–₹1,10,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 20,000–35,000</p>
+    <p><strong>Website:</strong> <a href="https://www.mvsrec.edu.in" target="_blank">mvsrec.edu.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('hitam')"> Hyderabad Institute of Technology & Management (HITAM)</label>
+  <div id="hitam" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 20,000–40,000</p>
+    <p><strong>Website:</strong> <a href="https://www.hitam.org" target="_blank">hitam.org</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('anurag')"> Anurag Group of Institutions</label>
+  <div id="anurag" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 15,000–35,000</p>
+    <p><strong>Website:</strong> <a href="https://www.anurag.edu.in" target="_blank">anurag.edu.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('ace')"> ACE Engineering College</label>
+  <div id="ace" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹90,000–₹1,20,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 30,000–50,000</p>
+    <p><strong>Website:</strong> <a href="https://www.aceengg.ac.in" target="_blank">aceengg.ac.in</a></p>
+  </div>
+</li>
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('sreenidhi')"> Sreenidhi Institute of Science and Technology</label>
+  <div id="sreenidhi" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 25,000–50,000</p>
+    <p><strong>Website:</strong> <a href="https://www.sreenidhi.edu.in" target="_blank">sreenidhi.edu.in</a></p>
+  </div>
+</li>
+
+<li>
+  <label><input type="radio" name="uni-info" onclick="showDetails('lords')"> Lord's Institute of Engineering and Technology (LIET)</label>
+  <div id="lords" class="details" style="display:none;">
+    <p><strong>Location:</strong> Hyderabad</p>
+    <p><strong>Fee:</strong> ₹80,000–₹1,00,000/year</p>
+    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 40,000–70,000</p>
+    <p><strong>Website:</strong> <a href="https://www.lordsgroup.org" target="_blank">lordsgroup.org</a></p>
+  </div>
+</li>
+
+ 
+
+    <!-- Private Colleges -->
+    <div id="private" class="college-list">
+      <ul>
+        <li>CMR College of Engineering & Technology</li>
+        <li>Sreenidhi Institute of Science and Technology</li>
+        <li>Vasavi College of Engineering</li>
+        <li>Gokaraju Rangaraju Institute</li>
+        <li>Malla Reddy Engineering College</li>
+      </ul>
+    </div>
+
+    <!-- Government Colleges -->
+    <div id="government" class="college-list">
+      <ul>
+        <li>Government College of Engineering, Kothagudem</li>
+        <li>University College of Engineering, Osmania University</li>
+        <li>University College of Engineering, Kakatiya University</li>
+        <li>RGUKT Basar</li>
+      </ul>
+    </div>
+
+    <!-- Affiliated Colleges -->
+    <div id="affiliated" class="college-list">
+      <ul>
+        <li>JBIT Hyderabad</li>
+        <li>Aurora's Technological Institute</li>
+        <li>Sri Indu College of Engineering</li>
+        <li>Stanley College of Engineering for Women</li>
+        <li>Vardhaman College of Engineering</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Main tab logic
+    const tabs = document.querySelectorAll(".tab");
+    const lists = document.querySelectorAll(".college-list");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        lists.forEach(list => list.classList.remove("active"));
+        document.getElementById(tab.dataset.target).classList.add("active");
+
+        document.getElementById("searchInput").value = "";
+        filterColleges("");
+      });
+    });
+
+    // Sub-tab logic in Universities
+    const subTabs = document.querySelectorAll(".sub-tab");
+    const subLists = document.querySelectorAll(".sub-list");
+
+    subTabs.forEach(subTab => {
+      subTab.addEventListener("click", () => {
+        subTabs.forEach(t => t.classList.remove("active"));
+        subTab.classList.add("active");
+
+        subLists.forEach(list => list.style.display = "none");
+        document.getElementById(subTab.dataset.sub).style.display = "block";
+
+        filterColleges(document.getElementById("searchInput").value.toLowerCase());
+      });
+    });
+
+    // Search functionality
+    document.getElementById("searchInput").addEventListener("input", function () {
+      filterColleges(this.value.toLowerCase());
+    });
+
+    function filterColleges(query) {
+      let activeSection = document.querySelector(".college-list.active");
+
+      if (activeSection.id === "universities") {
+        const activeSub = Array.from(subLists).find(div => div.style.display !== "none");
+        const items = activeSub.querySelectorAll("ul li");
+        items.forEach(item => {
+          item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
+        });
+      } else {
+        const items = activeSection.querySelectorAll("ul li");
+        items.forEach(item => {
+          item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
+        });
+      }
+    }
+
+    function showDetails(id) {
+      document.querySelectorAll('.details').forEach(div => div.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

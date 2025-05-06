@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TS EAMCET Counselling Process</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f3f3f3;
+    }
+    .step-info {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #ffffff;
+      border-left: 4px solid #007bff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>TS EAMCET Counselling Process</h2>
+
+  <label><input type="radio" name="step" onclick="showStep('step1')"> Step 1: Registration & Fee Payment</label><br>
+  <label><input type="radio" name="step" onclick="showStep('step2')"> Step 2: Certificate Verification</label><br>
+  <label><input type="radio" name="step" onclick="showStep('step3')"> Step 3: Choice Filling (Web Options)</label><br>
+  <label><input type="radio" name="step" onclick="showStep('step4')"> Step 4: Seat Allotment</label><br>
+  <label><input type="radio" name="step" onclick="showStep('step5')"> Step 5: Fee Payment & Reporting</label><br>
+  <label><input type="radio" name="step" onclick="showStep('step6')"> Step 6: Final Phase / Spot Round</label><br>
+
+  <div id="step1" class="step-info">
+    <h3>Step 1: Registration & Fee Payment</h3>
+    <p>After results, visit the official counselling site <strong>(https://tseamcet.nic.in)</strong>. Pay the processing fee (₹1200 for OC/BC, ₹600 for SC/ST) using online payment methods. Then book your slot for document verification.</p>
+  </div>
+
+  <div id="step2" class="step-info">
+    <h3>Step 2: Certificate Verification</h3>
+    <p>Visit the allotted Help Line Center (HLC) with original documents and 2 photocopy sets. You’ll be issued a verification slip with login credentials.</p>
+    <ul>
+      <li>TS EAMCET Hall Ticket & Rank Card</li>
+      <li>SSC & Intermediate Marks Memos</li>
+      <li>Transfer Certificate (TC)</li>
+      <li>Caste/Income/Residence Certificates (if applicable)</li>
+    </ul>
+  </div>
+
+  <div id="step3" class="step-info">
+    <h3>Step 3: Choice Filling (Web Options)</h3>
+    <p>Login using your credentials and fill in choices of colleges and branches in order of preference. You can edit them until the locking date. Priority in selection depends on your rank, category, and seat availability.</p>
+    <p><strong>Example Web Option Entries:</strong></p>
+    <ul>
+      <li>JNTU Hyderabad - CSE</li>
+      <li>OU College of Engineering - ECE</li>
+      <li>CBIT - IT</li>
+      <li>Vasavi College - CSE (AI)</li>
+      <li>MGIT - Mech</li>
+      <li>CVR College - EEE</li>
+    </ul>
+    <p>Tip: Choose at least 30–50 options to increase your chances.</p>
+  </div>
+
+  <div id="step4" class="step-info">
+    <h3>Step 4: Seat Allotment</h3>
+    <p>The system allots seats based on your rank, preferences, and reservation status. You can check your result online and download your seat allotment order.</p>
+  </div>
+
+  <div id="step5" class="step-info">
+    <h3>Step 5: Fee Payment & Reporting</h3>
+    <p>Pay the tuition fee online if not eligible for fee reimbursement. Download the joining report and allotment letter. Report to the allotted college physically before the deadline with your documents.</p>
+  </div>
+
+  <div id="step6" class="step-info">
+    <h3>Step 6: Final Phase / Spot Round</h3>
+    <p>If you missed earlier rounds or want to upgrade, participate in the second or spot round counselling. Spot admissions help fill vacant seats (mostly in private colleges).</p>
+    <p>Note: Spot round admissions are often direct, and fee reimbursement may not apply.</p>
+  </div>
+
+  <script>
+    function showStep(stepId) {
+      const steps = document.getElementsByClassName('step-info');
+      for (let i = 0; i < steps.length; i++) {
+        steps[i].style.display = 'none';
+      }
+      document.getElementById(stepId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
