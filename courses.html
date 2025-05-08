@@ -1,128 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Courses - College Guidance</title>
+  <title>Course Selector</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
+      padding: 20px;
+      background-color: #f9f9f9;
     }
-
-    /* Header */
-    .header {
-      background-color: #003366;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
+    .course-list {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
     }
-
-    .header img {
-      height: 25px;
-      margin-right: 10px;
+    h2, h3 {
+      color: #333;
     }
-
-    .header h1 {
-      font-size: 22px;
-      margin: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .header h1 span {
-      margin-left: 8px;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #003366;
-      display: flex;
-      padding: 10px 20px;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
-
-    .navbar a::after {
-      content: " ▼";
-      font-size: 10px;
-    }
-
-    /* Main content */
-    .main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .main h2 {
-      color: #003366;
-      font-size: 26px;
-      margin-bottom: 30px;
-    }
-
-    .stream-options label {
-      font-size: 18px;
-      margin: 0 20px;
-    }
-
-    input[type="radio"] {
-      transform: scale(1.2);
-      margin-right: 5px;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      font-style: italic;
+    ul {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+  <h2>Select Your Stream</h2>
 
-  <!-- Header -->
-  <div class="header">
-    <h1>
-      <img src="cap-icon.png" alt="🎓" />
-      <span>College Guidance</span>
-    </h1>
+<label><input type="radio" name="stream" onclick="showCourses('btech')"> B.Tech</label><br> <label><input type="radio" name="stream" onclick="showCourses('agriculture')"> Agriculture</label><br> <label><input type="radio" name="stream" onclick="showCourses('be')"> B.E</label>
+
+  <div id="btech" class="course-list">
+    <h3>B.Tech Courses</h3>
+    <p><strong>B.Tech (Bachelor of Technology)</strong> focuses on practical applications of engineering concepts, and is more skill-development and lab-oriented.</p>
+    <ul>
+      <li>Computer Science & Engineering (CSE)</li>
+      <li>Information Technology (IT)</li>
+      <li>Electronics & Communication Engineering (ECE)</li>
+      <li>Electrical & Electronics Engineering (EEE)</li>
+      <li>Mechanical Engineering</li>
+      <li>Civil Engineering</li>
+      <li>Artificial Intelligence & Data Science</li>
+      <li>Cyber Security</li>
+      <li>Robotics and Automation</li>
+      <li>Biotechnology</li>
+      <li>Agricultural Engineering</li>
+      <li>Food Technology</li>
+      <li>Environmental Engineering</li>
+    </ul>
   </div>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <a href="home.html">Home</a>
-    <a href="#">TS Colleges</a>
-    <a href="#">College Predictor</a>
-    <a href="#">Counselling Guidance</a>
-    <a href="#">Courses</a>
-    <a href="#">Logout</a>
+  <div id="agriculture" class="course-list">
+    <h3>Agriculture Courses</h3>
+    <p><strong>Agriculture courses</strong> focus on farming, food production, crop science, animal husbandry, and rural development. Great for government jobs, agri-business, and environmental sectors.</p>
+    <ul>
+      <li>B.Sc Agriculture</li>
+      <li>B.Sc Horticulture</li>
+      <li>B.Sc Forestry</li>
+      <li>B.Tech Agricultural Engineering</li>
+      <li>B.Tech Food Technology</li>
+      <li>B.Sc Animal Husbandry</li>
+      <li>B.F.Sc (Fisheries Science)</li>
+      <li>B.Sc Sericulture</li>
+      <li>B.Sc Agricultural Marketing and Co-operation</li>
+    </ul>
   </div>
 
-  <!-- Main Content -->
-  <div class="main">
-    <h2>Select Your Stream</h2>
-    <div class="stream-options">
-      <label><input type="radio" name="stream" value="btech"> B.Tech</label>
-      <label><input type="radio" name="stream" value="agriculture"> Agriculture</label>
-      <label><input type="radio" name="stream" value="be"> B.E</label>
-    </div>
+  <div id="be" class="course-list">
+    <h3>B.E Courses</h3>
+    <p><strong>B.E (Bachelor of Engineering)</strong> is slightly more theory-based than B.Tech, but covers the same core concepts. It is offered by traditional universities and focuses on strong engineering fundamentals.</p>
+    <ul>
+      <li>Computer Science Engineering</li>
+      <li>Electrical and Electronics Engineering</li>
+      <li>Electronics and Instrumentation Engineering</li>
+      <li>Electronics and Communication Engineering</li>
+      <li>Mechanical Engineering</li>
+      <li>Civil Engineering</li>
+      <li>Mechatronics</li>
+      <li>Automobile Engineering</li>
+      <li>Biomedical Engineering</li>
+      <li>Environmental Engineering</li>
+      <li>Aerospace Engineering</li>
+      <li>Marine Engineering</li>
+      <li>Chemical Engineering</li>
+      <li>Mining Engineering</li>
+    </ul>
   </div>
 
-  
+  <script>
+    function showCourses(id) {
+      const lists = document.getElementsByClassName('course-list');
+      for (let i = 0; i < lists.length; i++) {
+        lists[i].style.display = 'none';
+      }
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
+
