@@ -1,102 +1,157 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <title>Course Selector</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - College Guidance</title>
+    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="home.css">
+    <style>
+      .course-list {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: none;
     }
-    .course-list {
-      margin-top: 15px;
-      padding: 15px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: none;
-    }
+
     h2, h3 {
-      color: #333;
+        color: #333;
     }
-    ul {
-      margin-top: 10px;
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <h2>Select Your Stream</h2>
+    <header class="header">
+        <div class="logo">🎓 College Guidance</div>
+        <nav class="nav">
+            <a href="home.html">Home <span class="arrow">▼</span></a>
+            <a href="tscolleges.html">TS Colleges <span class="arrow">▼</span></a>
+            <a href="predictor.html">College Predictor <span class="arrow">▼</span></a>
+            <a href="counselling.html">Counselling Guidance <span class="arrow">▼</span></a>
+            <a href="courses.html">Courses <span class="arrow">▼</span></a>
+            <a href="logout.html">Logout <span class="arrow">▼</span></a>
+        </nav>
+    </header>
 
-<label><input type="radio" name="stream" onclick="showCourses('btech')"> B.Tech</label><br> <label><input type="radio" name="stream" onclick="showCourses('agriculture')"> Agriculture</label><br> <label><input type="radio" name="stream" onclick="showCourses('be')"> B.E</label>
+    <main class="main-content">
+        <h2>Select Your Stream</h2>
+        <div class="stream-options">
+            <label><input type="radio" name="stream" value="btech" onclick="showCourses('btech')"> B.Tech</label>
+            <label><input type="radio" name="stream" value="agriculture" onclick="showCourses('agriculture')"> Agriculture</label>
+            <label><input type="radio" name="stream" value="be" onclick="showCourses('be')"> B.E</label>
+        </div>
 
-  <div id="btech" class="course-list">
-    <h3>B.Tech Courses</h3>
-    <p><strong>B.Tech (Bachelor of Technology)</strong> focuses on practical applications of engineering concepts, and is more skill-development and lab-oriented.</p>
-    <ul>
-      <li>Computer Science & Engineering (CSE)</li>
-      <li>Information Technology (IT)</li>
-      <li>Electronics & Communication Engineering (ECE)</li>
-      <li>Electrical & Electronics Engineering (EEE)</li>
-      <li>Mechanical Engineering</li>
-      <li>Civil Engineering</li>
-      <li>Artificial Intelligence & Data Science</li>
-      <li>Cyber Security</li>
-      <li>Robotics and Automation</li>
-      <li>Biotechnology</li>
-      <li>Agricultural Engineering</li>
-      <li>Food Technology</li>
-      <li>Environmental Engineering</li>
-    </ul>
-  </div>
+        <div id="btech" class="course-list">
+            <h3>B.Tech Courses</h3>
+            <p><strong>B.Tech (Bachelor of Technology)</strong> focuses on practical applications of engineering concepts, and is more skill-development and lab-oriented.</p>
+            <ul>
+                <li>Computer Science & Engineering (CSE)</li>
+                <li>Information Technology (IT)</li>
+                <li>Electronics & Communication Engineering (ECE)</li>
+                <li>Electrical & Electronics Engineering (EEE)</li>
+                <li>Mechanical Engineering</li>
+                <li>Civil Engineering</li>
+                <li>Artificial Intelligence & Data Science</li>
+                <li>Cyber Security</li>
+                <li>Robotics and Automation</li>
+                <li>Biotechnology</li>
+                <li>Agricultural Engineering</li>
+                <li>Food Technology</li>
+                <li>Environmental Engineering</li>
+            </ul>
+             <section class="future-roadmaps">
+                <h4>Future Roadmaps</h4>
+                <div class="roadmap">
+                    <h5>Computer Science & Engineering (CSE)</h5>
+                    <p><strong>Subjects:</strong> Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, Software Engineering, Programming Languages (Java, Python, C++), Artificial Intelligence, Machine Learning.</p>
+                    <p><strong>Future Roadmap:</strong> Software Development, Data Science, AI Engineering, Cybersecurity, Full Stack Development, Cloud Computing, Research, Entrepreneurship, Higher Studies (MS, PhD).</p>
+                </div>
+                <div class="roadmap">
+                    <h5>Civil Engineering</h5>
+                    <p><strong>Subjects:</strong> Structural Analysis, Construction Materials, Fluid Mechanics, Geotechnical Engineering, Transportation Engineering, Environmental Engineering, Surveying.</p>
+                    <p><strong>Future Roadmap:</strong> Construction Management, Structural Engineering, Transportation Planning, Geotechnical Engineering, Environmental Engineering, Urban Planning, Infrastructure Development, Government Jobs, Consulting.</p>
+                </div>
+                 <div class="roadmap">
+                    <h5>Mechanical Engineering</h5>
+                    <p><strong>Subjects:</strong> Thermodynamics, Fluid Mechanics, Manufacturing Processes, Machine Design, Control Systems, Robotics, Heat Transfer.</p>
+                    <p><strong>Future Roadmap:</strong> Automotive Industry, Aerospace, Manufacturing, Robotics, Energy Sector, Research and Development, Design Engineering, Consulting.</p>
+                </div>
+            </section>
+        </div>
 
-  <div id="agriculture" class="course-list">
-    <h3>Agriculture Courses</h3>
-    <p><strong>Agriculture courses</strong> focus on farming, food production, crop science, animal husbandry, and rural development. Great for government jobs, agri-business, and environmental sectors.</p>
-    <ul>
-      <li>B.Sc Agriculture</li>
-      <li>B.Sc Horticulture</li>
-      <li>B.Sc Forestry</li>
-      <li>B.Tech Agricultural Engineering</li>
-      <li>B.Tech Food Technology</li>
-      <li>B.Sc Animal Husbandry</li>
-      <li>B.F.Sc (Fisheries Science)</li>
-      <li>B.Sc Sericulture</li>
-      <li>B.Sc Agricultural Marketing and Co-operation</li>
-    </ul>
-  </div>
+        <div id="agriculture" class="course-list">
+            <h3>Agriculture Courses</h3>
+            <p><strong>Agriculture courses</strong> focus on farming, food production, crop science, animal husbandry, and rural development. Great for government jobs, agri-business, and environmental sectors.</p>
+            <ul>
+                <li>B.Sc Agriculture</li>
+                <li>B.Sc Horticulture</li>
+                <li>B.Sc Forestry</li>
+                <li>B.Tech Agricultural Engineering</li>
+                <li>B.Tech Food Technology</li>
+                <li>B.Sc Animal Husbandry</li>
+                <li>B.F.Sc (Fisheries Science)</li>
+                <li>B.Sc Sericulture</li>
+                <li>B.Sc Agricultural Marketing and Co-operation</li>
+            </ul>
+            <section class="future-roadmaps">
+                <h4>Future Roadmaps</h4>
+                <div class="roadmap">
+                    <h5>B.Sc Agriculture</h5>
+                    <p><strong>Subjects:</strong> Agronomy, Soil Science, Plant Breeding, Agricultural Economics, Entomology, Plant Pathology, Extension Education.</p>
+                    <p><strong>Future Roadmap:</strong> Agricultural Officer, Farm Manager, Agronomist, Soil Scientist, Agricultural Consultant, Research Scientist, Government Jobs, Agri-business, Higher Studies (M.Sc. Agriculture).</p>
+                </div>
+                <div class="roadmap">
+                    <h5>B.Tech Agricultural Engineering</h5>
+                    <p><strong>Subjects:</strong> Farm Machinery, Irrigation Engineering, Soil and Water Conservation, Post-Harvest Technology, Renewable Energy in Agriculture.</p>
+                    <p><strong>Future Roadmap:</strong> Agricultural Engineer, Farm Machinery Designer, Irrigation Specialist,  Research and Development, Manufacturing, Government Jobs, Higher Studies (M.Tech).</p>
+                </div>
+            </section>
+        </div>
 
-  <div id="be" class="course-list">
-    <h3>B.E Courses</h3>
-    <p><strong>B.E (Bachelor of Engineering)</strong> is slightly more theory-based than B.Tech, but covers the same core concepts. It is offered by traditional universities and focuses on strong engineering fundamentals.</p>
-    <ul>
-      <li>Computer Science Engineering</li>
-      <li>Electrical and Electronics Engineering</li>
-      <li>Electronics and Instrumentation Engineering</li>
-      <li>Electronics and Communication Engineering</li>
-      <li>Mechanical Engineering</li>
-      <li>Civil Engineering</li>
-      <li>Mechatronics</li>
-      <li>Automobile Engineering</li>
-      <li>Biomedical Engineering</li>
-      <li>Environmental Engineering</li>
-      <li>Aerospace Engineering</li>
-      <li>Marine Engineering</li>
-      <li>Chemical Engineering</li>
-      <li>Mining Engineering</li>
-    </ul>
-  </div>
+        <div id="be" class="course-list">
+            <h3>B.E Courses</h3>
+            <p><strong>B.E (Bachelor of Engineering)</strong> is slightly more theory-based than B.Tech, but covers the same core concepts. It is offered by traditional universities and focuses on strong engineering fundamentals.</p>
+            <ul>
+                 <li>Computer Science Engineering</li>
+                <li>Electrical and Electronics Engineering</li>
+                <li>Electronics and Instrumentation Engineering</li>
+                <li>Electronics and Communication Engineering</li>
+                <li>Mechanical Engineering</li>
+                <li>Civil Engineering</li>
+                <li>Mechatronics</li>
+                <li>Automobile Engineering</li>
+                <li>Biomedical Engineering</li>
+                <li>Environmental Engineering</li>
+                <li>Aerospace Engineering</li>
+                <li>Marine Engineering</li>
+                <li>Chemical Engineering</li>
+                <li>Mining Engineering</li>
+            </ul>
+            <section class="future-roadmaps">
+                <h4>Future Roadmaps</h4>
+                <div class="roadmap">
+                    <h5>B.E. Computer Science Engineering</h5>
+                    <p><strong>Subjects:</strong> Programming, Data Structures, Algorithms, Operating Systems, Database Systems, Networks, Software Engineering.</p>
+                    <p><strong>Future Roadmap:</strong> Software Development, System Architect, Database Administrator, Network Engineer,  AI/ML Engineer,  Cybersecurity Expert,  Consultant, Research.</p>
+                </div>
+                <div class="roadmap">
+                    <h5>B.E. Mechanical Engineering</h5>
+                    <p><strong>Subjects:</strong> Thermodynamics, Solid Mechanics, Fluid Mechanics, Manufacturing, Machine Design, Control Systems.</p>
+                    <p><strong>Future Roadmap:</strong> Design Engineer, Manufacturing Engineer, Automotive Engineer,  Aerospace Engineer, Energy Engineer,  Robotics Engineer, Consultant.</p>
+                </div>
+            </section>
+        </div>
+    </main>
 
-  <script>
-    function showCourses(id) {
-      const lists = document.getElementsByClassName('course-list');
-      for (let i = 0; i < lists.length; i++) {
-        lists[i].style.display = 'none';
-      }
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
-
+    <script>
+        function showCourses(id) {
+            const lists = document.getElementsByClassName('course-list');
+            for (let i = 0; i < lists.length; i++) {
+                lists[i].style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
-
