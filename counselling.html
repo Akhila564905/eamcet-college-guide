@@ -1,195 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>College Guidance - TS EAMCET Counselling</title>
-  <link rel="stylesheet" href="home.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f3f3f3;
-    }
+    <meta charset="UTF-8">
+    <title>College Guidance - TS EAMCET Counselling</title>
+    <link rel="stylesheet" href="home.css"> <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
 
-    .header {
-      background-color: #003366;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .content {
+            padding: 20px;
+        }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+        .step-info {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-left: 4px solid #007bff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    .nav a {
-      color: white;
-      margin-left: 15px;
-      text-decoration: none;
-      position: relative;
-    }
+        h2 {
+            color: #333;
+        }
 
-    .nav a:hover {
-      text-decoration: underline;
-    }
+        h3 {
+            color: #007bff;
+        }
 
-    .arrow {
-      font-size: 12px;
-      margin-left: 5px;
-    }
+        ul {
+            margin-left: 20px;
+        }
 
-    .content {
-      padding: 20px;
-    }
-
-    .step-info {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      background-color: #ffffff;
-      border-left: 4px solid #007bff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #333;
-    }
-
-    h3 {
-      color: #007bff;
-    }
-
-    ul {
-      margin-left: 20px;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-  </style>
+        p {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🎓 College Guidance</div>
-    <nav class="nav">
-      <a href="home.html">Home <span class="arrow">▼</span></a>
-      <a href="tscolleges.html">TS Colleges <span class="arrow">▼</span></a>
-      <a href="predictor.html">College Predictor <span class="arrow">▼</span></a>
-      <a href="counselling.html">Counselling Guidance <span class="arrow">▼</span></a>
-      <a href="courses.html">Courses <span class="arrow">▼</span></a>
-      <a href="logout.html">Logout <span class="arrow">▼</span></a>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="logo">🎓 College Guidance</div>
+        <nav class="nav">
+            <a href="home.html">Home <span class="arrow">▼</span></a>
+            <a href="tscolleges.html">TS Colleges <span class="arrow">▼</span></a>
+            <a href="predictor.html">College Predictor <span class="arrow">▼</span></a>
+            <a href="counselling.html">Counselling Guidance <span class="arrow">▼</span></a>
+            <a href="courses.html">Courses <span class="arrow">▼</span></a>
+            <a href="logout.html">Logout <span class="arrow">▼</span></a>
+        </nav>
+    </header>
 
-  <div class="content">
-    <h2>TS EAMCET Counselling Process</h2>
+    <div class="content">
+        <h2>TS EAMCET Counselling Process</h2>
 
-    <label><input type="radio" name="step" onclick="showStep('step1')"> Step 1: Registration & Fee Payment</label><br>
-    <label><input type="radio" name="step" onclick="showStep('step2')"> Step 2: Certificate Verification</label><br>
-    <label><input type="radio" name="step" onclick="showStep('step3')"> Step 3: Choice Filling (Web Options)</label><br>
-    <label><input type="radio" name="step" onclick="showStep('step4')"> Step 4: Seat Allotment</label><br>
-    <label><input type="radio" name="step" onclick="showStep('step5')"> Step 5: Fee Payment & Reporting</label><br>
-    <label><input type="radio" name="step" onclick="showStep('step6')"> Step 6: Final Phase / Spot Round</label><br>
+        <label><input type="radio" name="step" onclick="showStep('step1')"> Step 1: Registration & Fee Payment</label><br>
+        <label><input type="radio" name="step" onclick="showStep('step2')"> Step 2: Certificate Verification</label><br>
+        <label><input type="radio" name="step" onclick="showStep('step3')"> Step 3: Choice Filling (Web Options)</label><br>
+        <label><input type="radio" name="step" onclick="showStep('step4')"> Step 4: Seat Allotment</label><br>
+        <label><input type="radio" name="step" onclick="showStep('step5')"> Step 5: Fee Payment & Reporting</label><br>
+        <label><input type="radio" name="step" onclick="showStep('step6')"> Step 6: Final Phase / Spot Round</label><br>
 
-    <div id="step1" class="step-info">
-      <h3>Step 1: Registration & Fee Payment</h3>
-      <p>Visit the official TS EAMCET counselling website: <strong><a href="https://tseamcet.nic.in" target="_blank">https://tseamcet.nic.in</a></strong>.</p>
-      <p>Click on "Processing Fee Payment" and enter required details like Hall Ticket Number, Rank, and Date of Birth. Complete the payment using debit/credit card, net banking, or UPI.</p>
-      <p><strong>Processing Fees:</strong> ₹1200 for OC/BC candidates and ₹600 for SC/ST candidates.</p>
-      <p>After successful payment, take a printout of the receipt and book your slot for Certificate Verification by choosing your preferred Help Line Center and date/time.</p>
-      <p><strong>Note:</strong> Slot booking is compulsory. Missing it can delay your counselling process.</p>
+        <div id="step1" class="step-info">
+            <h3>Step 1: Registration & Fee Payment</h3>
+            <p>Visit the official TS EAMCET counselling website: <strong><a href="https://tseamcet.nic.in" target="_blank">https://tseamcet.nic.in</a></strong>.</p>
+            <p>Click on "Processing Fee Payment" and enter required details like Hall Ticket Number, Rank, and Date of Birth. Complete the payment using debit/credit card, net banking, or UPI.</p>
+            <p><strong>Processing Fees:</strong> ₹1200 for OC/BC candidates and ₹600 for SC/ST candidates.</p>
+            <p>After successful payment, take a printout of the receipt and book your slot for Certificate Verification by choosing your preferred Help Line Center and date/time.</p>
+            <p><strong>Note:</strong> Slot booking is compulsory. Missing it can delay your counselling process.</p>
+        </div>
+
+        <div id="step2" class="step-info">
+            <h3>Step 2: Certificate Verification</h3>
+            <p>On the scheduled date, report at the selected Help Line Center with the following documents. Carry both original documents and two sets of photocopies:</p>
+            <ul>
+                <li>TS EAMCET Rank Card and Hall Ticket</li>
+                <li>Aadhaar Card</li>
+                <li>S.S.C. or 10th Class Marks Memo</li>
+                <li>Intermediate Marks Memo</li>
+                <li>Transfer Certificate (TC)</li>
+                <li>Income Certificate issued after January 1 (for fee reimbursement)</li>
+                <li>Caste Certificate (if applicable)</li>
+                <li>Residence Certificate (for local status)</li>
+                <li>Special category certificates: NCC, CAP (Army), PHC, Sports/Minorities (if applicable)</li>
+            </ul>
+            <p>Biometric authentication and photograph capturing will be done. You'll receive a verification slip and login credentials for web options entry.</p>
+        </div>
+
+        <div id="step3" class="step-info">
+            <h3>Step 3: Choice Filling (Web Options)</h3>
+            <p>Using the login credentials, access the web options portal. Select your preferred colleges and courses in priority order. You can edit or rearrange options any number of times before the deadline.</p>
+            <p><strong>Suggestions for Web Options Entry:</strong></p>
+            <ul>
+                <li>Choose at least 30–50 options to increase allotment chances.</li>
+                <li>Include a mix of top, mid, and lower-tier colleges.</li>
+                <li>Use last year’s cutoff data to estimate possibilities.</li>
+                <li>Don’t forget to <strong>lock your choices</strong> before the deadline, or the system will auto-lock your latest saved options.</li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <ul>
+                <li>1. JNTU Hyderabad - CSE</li>
+                <li>2. OUCE - ECE</li>
+                <li>3. CBIT - IT</li>
+                <li>4. Vasavi - CSE (AI)</li>
+                <li>5. MGIT - Mech</li>
+                <li>6. CVR - EEE</li>
+            </ul>
+        </div>
+
+        <div id="step4" class="step-info">
+            <h3>Step 4: Seat Allotment</h3>
+            <p>Seat allotment is announced as per the schedule. Login with your credentials to check your allotment status. The allotment depends on:</p>
+            <ul>
+                <li>Your TS EAMCET rank</li>
+                <li>Reservation category (SC/ST/BC/PH/NCC etc.)</li>
+                <li>Local/Non-local status</li>
+                <li>Gender and Region</li>
+                <li>Availability of seats in selected college and branch</li>
+            </ul>
+            <p>Download the <strong>Allotment Order</strong> and <strong>Joining Report</strong>.</p>
+        </div>
+
+        <div id="step5" class="step-info">
+            <h3>Step 5: Fee Payment & Reporting</h3>
+            <p>If you’re allotted a seat, pay the <strong>tuition fee</strong> online via the portal (only if you are not eligible for fee reimbursement).</p>
+            <p>After payment, download the fee receipt and the joining report. Then, report physically to the allotted college with:</p>
+            <ul>
+                <li>Joining Report</li>
+                <li>Allotment Order</li>
+                <li>Fee Payment Receipt</li>
+                <li>All original certificates</li>
+                <li>Passport size photos (if required)</li>
+            </ul>
+            <p>Failure to report within the given deadline will lead to cancellation of the seat.</p>
+        </div>
+
+        <div id="step6" class="step-info">
+            <h3>Step 6: Final Phase / Spot Round</h3>
+            <p>The <strong>Final Phase</strong> is for students who didn’t get a seat or are not satisfied with the allotment and wish to try again. You need to participate again in choice filling.</p>
+            <p>The <strong>Spot Round</strong> is conducted mostly by private colleges to fill vacant seats. Eligibility rules may vary.</p>
+            <p><strong>Important Notes:</strong></p>
+            <ul>
+                <li>Fresh registration may be required for Final/Spot Rounds.</li>
+                <li>Fee reimbursement is generally not applicable for Spot Admissions.</li>
+                <li>Seats are allotted on the spot based on merit, availability, and payment of full fee.</li>
+            </ul>
+        </div>
     </div>
 
-    <div id="step2" class="step-info">
-      <h3>Step 2: Certificate Verification</h3>
-      <p>On the scheduled date, report at the selected Help Line Center with the following documents. Carry both original documents and two sets of photocopies:</p>
-      <ul>
-        <li>TS EAMCET Rank Card and Hall Ticket</li>
-        <li>Aadhaar Card</li>
-        <li>S.S.C. or 10th Class Marks Memo</li>
-        <li>Intermediate Marks Memo</li>
-        <li>Transfer Certificate (TC)</li>
-        <li>Income Certificate issued after January 1 (for fee reimbursement)</li>
-        <li>Caste Certificate (if applicable)</li>
-        <li>Residence Certificate (for local status)</li>
-        <li>Special category certificates: NCC, CAP (Army), PHC, Sports/Minorities (if applicable)</li>
-      </ul>
-      <p>Biometric authentication and photograph capturing will be done. You'll receive a verification slip and login credentials for web options entry.</p>
-    </div>
-
-    <div id="step3" class="step-info">
-      <h3>Step 3: Choice Filling (Web Options)</h3>
-      <p>Using the login credentials, access the web options portal. Select your preferred colleges and courses in priority order. You can edit or rearrange options any number of times before the deadline.</p>
-      <p><strong>Suggestions for Web Options Entry:</strong></p>
-      <ul>
-        <li>Choose at least 30–50 options to increase allotment chances.</li>
-        <li>Include a mix of top, mid, and lower-tier colleges.</li>
-        <li>Use last year’s cutoff data to estimate possibilities.</li>
-        <li>Don’t forget to <strong>lock your choices</strong> before the deadline, or the system will auto-lock your latest saved options.</li>
-      </ul>
-      <p><strong>Example:</strong></p>
-      <ul>
-        <li>1. JNTU Hyderabad - CSE</li>
-        <li>2. OUCE - ECE</li>
-        <li>3. CBIT - IT</li>
-        <li>4. Vasavi - CSE (AI)</li>
-        <li>5. MGIT - Mech</li>
-        <li>6. CVR - EEE</li>
-      </ul>
-    </div>
-
-    <div id="step4" class="step-info">
-      <h3>Step 4: Seat Allotment</h3>
-      <p>Seat allotment is announced as per the schedule. Login with your credentials to check your allotment status. The allotment depends on:</p>
-      <ul>
-        <li>Your TS EAMCET rank</li>
-        <li>Reservation category (SC/ST/BC/PH/NCC etc.)</li>
-        <li>Local/Non-local status</li>
-        <li>Gender and Region</li>
-        <li>Availability of seats in selected college and branch</li>
-      </ul>
-      <p>Download the <strong>Allotment Order</strong> and <strong>Joining Report</strong>.</p>
-    </div>
-
-    <div id="step5" class="step-info">
-      <h3>Step 5: Fee Payment & Reporting</h3>
-      <p>If you’re allotted a seat, pay the <strong>tuition fee</strong> online via the portal (only if you are not eligible for fee reimbursement).</p>
-      <p>After payment, download the fee receipt and the joining report. Then, report physically to the allotted college with:</p>
-      <ul>
-        <li>Joining Report</li>
-        <li>Allotment Order</li>
-        <li>Fee Payment Receipt</li>
-        <li>All original certificates</li>
-        <li>Passport size photos (if required)</li>
-      </ul>
-      <p>Failure to report within the given deadline will lead to cancellation of the seat.</p>
-    </div>
-
-    <div id="step6" class="step-info">
-      <h3>Step 6: Final Phase / Spot Round</h3>
-      <p>The <strong>Final Phase</strong> is for students who didn’t get a seat or are not satisfied with the allotment and wish to try again. You need to participate again in choice filling.</p>
-      <p>The <strong>Spot Round</strong> is conducted mostly by private colleges to fill vacant seats. Eligibility rules may vary.</p>
-      <p><strong>Important Notes:</strong></p>
-      <ul>
-        <li>Fresh registration may be required for Final/Spot Rounds.</li>
-        <li>Fee reimbursement is generally not applicable for Spot Admissions.</li>
-        <li>Seats are allotted on the spot based on merit, availability, and payment of full fee.</li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    function showStep(stepId) {
-      const steps = document.getElementsByClassName('step-info');
-      for (let i = 0; i < steps.length; i++) {
-        steps[i].style.display = 'none';
-      }
-      document.getElementById(stepId).style.display = 'block';
-    }
-  </script>
+    <script>
+        function showStep(stepId) {
+            const steps = document.getElementsByClassName('step-info');
+            for (let i = 0; i < steps.length; i++) {
+                steps[i].style.display = 'none';
+            }
+            document.getElementById(stepId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
