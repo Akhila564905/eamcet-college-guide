@@ -1,165 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>College Guidance</title>
-  <link rel="stylesheet" href="home.css">
-  <script defer src="predict.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7fc;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <title>College Guidance</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
 
-    .header {
-      background-color: #002f6c;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+        .container {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
+        h1 {
+            text-align: center;
+            color: #002f6c;
+            margin-bottom: 2rem;
+        }
 
-    .nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 1rem;
-      position: relative;
-    }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .nav a:hover {
-      text-decoration: underline;
-    }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
 
-    .arrow {
-      font-size: 0.7rem;
-    }
+        button {
+            background-color: #002f6c;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            margin-top: 2rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
 
-    .container {
-      max-width: 700px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
+        button:hover {
+            background-color: #014aad;
+        }
 
-    h1 {
-      text-align: center;
-      color: #002f6c;
-      margin-bottom: 2rem;
-    }
+        #results {
+            margin-top: 2rem;
+        }
 
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
+        ul {
+            padding-left: 20px;
+        }
 
-    input[type="number"], select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #002f6c;
-      color: white;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      margin-top: 2rem;
-      cursor: pointer;
-      width: 100%;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #014aad;
-    }
-
-    #results {
-      margin-top: 2rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin: 8px 0;
-    }
-  </style>
+        li {
+            margin: 8px 0;
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🎓 College Guidance</div>
-    <nav class="nav">
-      <a href="home.html">Home <span class="arrow">▼</span></a>
-      <a href="tscolleges.html">TS Colleges <span class="arrow">▼</span></a>
-      <a href="predictor.html">College Predictor <span class="arrow">▼</span></a>
-      <a href="counselling.html">Counselling Guidance <span class="arrow">▼</span></a>
-      <a href="courses.html">Courses <span class="arrow">▼</span></a>
-      <a href="login.html">Logout <span class="arrow">▼</span></a>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="logo">🎓 College Guidance</div>
+        <nav class="nav">
+            <a href="home.html">Home <span class="arrow">▼</span></a>
+            <a href="tscolleges.html">TS Colleges <span class="arrow">▼</span></a>
+            <a href="predictor.html">College Predictor <span class="arrow">▼</span></a>
+            <a href="counselling.html">Counselling Guidance <span class="arrow">▼</span></a>
+            <a href="courses.html">Courses <span class="arrow">▼</span></a>
+            <a href="logout.html">Logout <span class="arrow">▼</span></a>
+        </nav>
+    </header>
 
-  <div class="container">
-    <h1>📍 College Predictor</h1>
-    
-    <label for="rank">EAMCET Rank</label>
-    <input type="number" id="rank" placeholder="Enter your EAMCET rank">
+    <div class="container">
+        <h1>📍 College Predictor</h1>
 
-    <label for="category">Caste / Category</label>
-    <select id="category">
-      <option value="bc-a">BC-A</option>
-      <option value="bc-b">BC-B</option>
-      <option value="bc-c">BC-C</option>
-      <option value="bc-d">BC-D</option>
-      <option value="bc-e">BC-E</option>
-      <option value="oc">OC</option>
-      <option value="sc">SC</option>
-      <option value="st">ST</option>
-    </select>
+        <label for="rank">EAMCET Rank</label>
+        <input type="number" id="rank" placeholder="Enter your EAMCET rank">
 
-    <label for="gender">Gender</label>
-    <select id="gender">
-      <option value="female">Female</option>
-      <option value="male">Male</option>
-      <option value="other">Other</option>
-    </select>
+        <label for="category">Caste / Category</label>
+        <select id="category">
+            <option value="bc-a">BC-A</option>
+            <option value="bc-b">BC-B</option>
+            <option value="bc-c">BC-C</option>
+            <option value="bc-d">BC-D</option>
+            <option value="bc-e">BC-E</option>
+            <option value="oc">OC</option>
+            <option value="sc">SC</option>
+            <option value="st">ST</option>
+        </select>
 
-    <label for="branch">Branch</label>
-    <select id="branch">
-      <option value="cse">CSE</option>
-      <option value="ece">ECE</option>
-      <option value="eee">EEE</option>
-      <option value="mech">Mechanical</option>
-      <option value="civil">Civil</option>
-      <option value="it">IT</option>
-      <option value="aiml">AI & ML</option>
-      <option value="ds">Data Science</option>
-    </select>
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+        </select>
 
-    <label for="top">Top Colleges List of:</label>
-    <input type="number" id="top" placeholder="How many colleges to display? eg: 5">
+        <label for="branch">Branch</label>
+        <select id="branch">
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="eee">EEE</option>
+            <option value="mech">Mechanical</option>
+            <option value="civil">Civil</option>
+            <option value="it">IT</option>
+            <option value="aiml">AI & ML</option>
+            <option value="ds">Data Science</option>
+        </select>
 
-    <button onclick="predictColleges()">Predict My Colleges 🎯</button>
+        <label for="top">Top Colleges List of:</label>
+        <input type="number" id="top" placeholder="How many colleges to display? eg: 5">
 
-    <div id="results"></div>
-  </div>
+        <button onclick="predictColleges()">Predict My Colleges 🎯</button>
+
+        <div id="results"></div>
+    </div>
+
+    <!-- JavaScript linked at the end of body for performance -->
+    <script src="predict.js"></script>
 </body>
 </html>
