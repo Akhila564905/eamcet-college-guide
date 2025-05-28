@@ -1,444 +1,1081 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TS Colleges Explorer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      background: #555;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav button {
-      background: none;
-      border: none;
-      color: white;
-      padding: 1rem;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    nav button:hover, nav button.active {
-      background: #444;
-    }
-    .container {
-      padding: 2rem;
-    }
-    .search-bar {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-    }
-    .search-bar input {
-      padding: 0.5rem;
-      width: 100%;
-      max-width: 400px;
-    }
-    .college-list {
-      display: none;
-    }
-    .college-list.active {
-      display: block;
-    }
-    .sub-nav {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .sub-tab {
-      background: #ccc;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-    .sub-tab.active {
-      background: #aaa;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: white;
-      padding: 1rem;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .details {
-      background: #f9f9f9;
-      padding: 0.5rem 1rem;
-      margin-top: 0.5rem;
-      border-left: 4px solid #007BFF;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>TS Colleges - College Guidance</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="tscolleges.css">
+  <script defer src="tscolleges.js"></script>
 </head>
 <body>
-  <header>
-    <h1>TS Colleges Explorer</h1>
+  <!-- Same Header as home.html -->
+  <header class="header">
+    <div class="logo">🎓 College Guidance</div>
+    <nav class="nav">
+      <a href="home.html">Home <span class="arrow">▼</span></a>
+      <a href="tscolleges.html">TS Colleges <span class="arrow">▼</span></a>
+      <a href="predictor.html">College Predictor <span class="arrow">▼</span></a>
+      <a href="counselling.html">Counselling Guidance <span class="arrow">▼</span></a>
+      <a href="courses.html">Courses <span class="arrow">▼</span></a>
+      <a href="logout.html">Logout <span class="arrow">▼</span></a>
+    </nav>
   </header>
 
-  <nav>
-    <button class="tab active" data-target="universities">Universities</button>
-    <button class="tab" data-target="private">Private</button>
-    <button class="tab" data-target="government">Government</button>
-    <button class="tab" data-target="affiliated">Affiliated</button>
-  </nav>
+  <div style="padding: 20px; text-align: center;">
+    <input type="text" id="searchInput" placeholder="Search for college.." style="padding: 10px; width: 60%; border-radius: 25px; border: 1px solid #ccc; box-shadow: 1px 1px 5px #ccc;">
+  </div>
 
-  <div class="container">
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search colleges...">
+  <!-- College Cards Container -->
+  <div id="collegeList" style="padding: 20px; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+
+    <div class="college-card" data-name="JNTUH UNIVERSITY COLLEGE OF ENGINEERING HYDERABAD">
+      <h3><b>1 JNTUH UNIVERSITY COLLEGE OF ENGINEERING HYDERABAD [JNTH]</b></h3>
+      <p>
+  <b>Estd:</b> 🗓️ 1965 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Type:</b> University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>📍 HYDERABAD, MDL</b>
+</p>
+      <p>
+  <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Fee:</b> ₹50000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>
+     <button onclick="window.location.href='https://eduvale.in/ts-college-list/college/JNTH'">View JNTH</button>
+  </b>
+</p>
+      
+      
     </div>
 
-    <!-- Universities Tab -->
-    <div id="universities" class="college-list active">
-      <div class="sub-nav">
-        <button class="sub-tab active" data-sub="central">Central Universities</button>
-        <button class="sub-tab" data-sub="state">State Universities</button>
-        <button class="sub-tab" data-sub="private-public">Private/Public Universities</button>
-      </div>
+<div class="college-card" data-name="JNTUH UNIVERSITY COLLEGE OF ENGINEERING -5 YEAR INTEGRATED MTECH SELF FINANCE">
+    <h3><b>JNTUH UNIVERSITY COLLEGE OF ENGINEERING -5 YEAR INTEGRATED MTECH SELF FINANCE [JNTHMT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1965 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KUKATPALLY, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹100000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/JNTHMT'">View JNTHMT</button></b>
+    </p>
+</div>
 
-      <!-- Central Universities -->
-      <div id="central" class="sub-list">
-        <ul>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('iith')"> IIT Hyderabad</label>
-            <div id="iith" class="details" style="display:none;">
-              <p><strong>Location:</strong> Sangareddy</p>
-              <p><strong>Fee:</strong> ₹2,00,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> JEE Adv 2024: Rank 431–652</p>
-              <p><strong>Website:</strong> <a href="https://www.iith.ac.in" target="_blank">iith.ac.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('nitw')"> NIT Warangal</label>
-            <div id="nitw" class="details" style="display:none;">
-              <p><strong>Location:</strong> Warangal</p>
-              <p><strong>Fee:</strong> ₹90,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: Rank 731–1899</p>
-              <p><strong>Website:</strong> <a href="https://www.nitw.ac.in" target="_blank">nitw.ac.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('iiith')"> IIIT Hyderabad</label>
-            <div id="iiith" class="details" style="display:none;">
-              <p><strong>Location:</strong> Gachibowli, Hyderabad</p>
-              <p><strong>Fee:</strong> ₹4,50,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: Rank 2199–3550</p>
-              <p><strong>Website:</strong> <a href="https://www.iiit.ac.in" target="_blank">iiit.ac.in</a></p>
-            </div>
-          </li>
-        </ul>
-      </div>
+<div class="college-card" data-name="CHAITANYA BHARATHI INSTITUTE OF TECHNOLOGY">
+    <h3><b>2 CHAITANYA BHARATHI INSTITUTE OF TECHNOLOGY [CBIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1979 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GANDIPET, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹140000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CBIT'">View CBIT</button></b>
+    </p>
+</div>
 
-      <!-- State Universities -->
-      <div id="state" class="sub-list" style="display: none;">
-        <ul>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('jntuh')"> Jawaharlal Nehru Technological University, Hyderabad (JNTUH)</label>
-            <div id="jntuh" class="details" style="display:none;">
-              <p><strong>Location:</strong> Hyderabad</p>
-              <p><strong>Established:</strong> 1972</p>
-              <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> Rank 15,000–30,000 (JEE Main 2024)</p>
-              <p><strong>Website:</strong> <a href="https://www.jntuh.ac.in" target="_blank">jntuh.ac.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('ku')"> Kakatiya University</label>
-            <div id="ku" class="details" style="display:none;">
-              <p><strong>Location:</strong> Warangal</p>
-              <p><strong>Established:</strong> 1976</p>
-              <p><strong>Fee:</strong> ₹60,000–₹80,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> Rank 30,000–40,000 (JEE Main 2024)</p>
-              <p><strong>Website:</strong> <a href="https://www.kakatiya.ac.in" target="_blank">kakatiya.ac.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('osmania')"> Osmania University</label>
-            <div id="osmania" class="details" style="display:none;">
-              <p><strong>Location:</strong> Hyderabad</p>
-              <p><strong>Established:</strong> 1918</p>
-              <p><strong>Fee:</strong> ₹50,000–₹70,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> Rank 20,000–35,000 (JEE Main 2024)</p>
-              <p><strong>Website:</strong> <a href="https://www.osmania.ac.in" target="_blank">osmania.ac.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('rgukt')"> Rajiv Gandhi University of Knowledge Technologies (RGUKT)</label>
-            <div id="rgukt" class="details" style="display:none;">
-              <p><strong>Location:</strong> Basar, Telangana</p>
-              <p><strong>Established:</strong> 2008</p>
-              <p><strong>Fee:</strong> ₹1,00,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> Admissions through a separate entrance exam</p>
-              <p><strong>Website:</strong> <a href="https://www.rgukt.in" target="_blank">rgukt.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('satavahana')"> Satavahana University</label>
-            <div id="satavahana" class="details" style="display:none;">
-              <p><strong>Location:</strong> Karimnagar</p>
-              <p><strong>Established:</strong> 2008</p>
-              <p><strong>Fee:</strong> ₹50,000–₹75,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> Rank 35,000–50,000 (JEE Main 2024)</p>
-              <p><strong>Website:</strong> <a href="https://www.satavahana.ac.in" target="_blank">satavahana.ac.in</a></p>
-            </div>
-          </li>
-          <li>
-            <label><input type="radio" name="uni-info" onclick="showDetails('telangana')"> Telangana University</label>
-            <div id="telangana" class="details" style="display:none;">
-              <p><strong>Location:</strong> Nizamabad</p>
-              <p><strong>Established:</strong> 2006</p>
-              <p><strong>Fee:</strong> ₹40,000–₹70,000/year</p>
-              <p><strong>Cutoff (CSE - Gen):</strong> Rank 40,000–60,000 (JEE Main 2024)</p>
-              <p><strong>Website:</strong> <a href="https://www.telanganauniversity.ac.in" target="_blank">telanganauniversity.ac.in</a></p>
-            </div>
-          </li>
-        </ul>
-      </div>
+<div class="college-card" data-name="VNR VIGNANA JYOTHI INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>3 VNR VIGNANA JYOTHI INSTITUTE OF ENGINEERING AND TECHNOLOGY [VJEC]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1995 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 BACHUPALLY, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹135000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VJEC'">View VJEC</button></b>
+    </p>
+</div>
 
-      <!-- Private/Public Universities -->
-      <div id="private-public" class="sub-list" style="display: none;">
-        <ul>
-          <li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('vfstr')"> Vignan's Foundation for Science, Technology & Research (VFSTR)</label>
-  <div id="vfstr" class="details" style="display:none;">
-    <p><strong>Location:</strong> Guntur (Near Telangana border)</p>
-    <p><strong>Fee:</strong> ₹1,50,000–₹2,00,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 15,000–30,000</p>
-    <p><strong>Website:</strong> <a href="https://www.vignan.edu" target="_blank">vignan.edu</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="O U COLLEGE OF ENGINEERING HYDERABAD">
+    <h3><b>4 O U COLLEGE OF ENGINEERING HYDERABAD [OUCE]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1929 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 HYDERABAD, HYD</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹35000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/OUCE'">View OUCE</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('shivnadar')"> Shiv Nadar University, Hyderabad</label>
-  <div id="shivnadar" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹2,00,000–₹2,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main or SNUSAT: 5,000–15,000</p>
-    <p><strong>Website:</strong> <a href="https://www.snu.edu.in" target="_blank">snu.edu.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="CVR COLLEGE OF ENGINEERING">
+    <h3><b>5 CVR COLLEGE OF ENGINEERING [CVRH]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 IBRAHIMPAT, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹150000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CVRH'">View CVRH</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('ifhe')"> ICFAI Foundation for Higher Education (IFHE)</label>
-  <div id="ifhe" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹2,00,000–₹3,00,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 10,000–25,000</p>
-    <p><strong>Website:</strong> <a href="https://www.ifheindia.org" target="_blank">ifheindia.org</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="SR UNIVERSITY (formerly SR ENGINEERING COLLEGE)">
+    <h3><b>6 SR UNIVERSITY (formerly SR ENGINEERING COLLEGE) [SRHP]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> SR University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Private University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 HASANPARTH, HNK</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹130000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/SRHP'">View SRHP</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('cbit')"> Chaitanya Bharathi Institute of Technology (CBIT)</label>
-  <div id="cbit" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 15,000–30,000</p>
-    <p><strong>Website:</strong> <a href="https://www.cbit.ac.in" target="_blank">cbit.ac.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="VASAVI COLLEGE OF ENGINEERING">
+    <h3><b>7 VASAVI COLLEGE OF ENGINEERING [VASV]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1981 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 HYDERABAD, HYD</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹140000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VASV'">View VASV</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('griet')"> Gokaraju Rangaraju Institute of Engineering and Technology (GRIET)</label>
-  <div id="griet" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 15,000–25,000</p>
-    <p><strong>Website:</strong> <a href="https://www.griet.ac.in" target="_blank">griet.ac.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="GOKARAJU RANGARAJU INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>8 GOKARAJU RANGARAJU INSTITUTE OF ENGINEERING AND TECHNOLOGY [GRRR]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1997 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MIYAPUR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹130000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/GRRR'">View GRRR</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('vasavi')"> Vasavi College of Engineering</label>
-  <div id="vasavi" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 15,000–30,000</p>
-    <p><strong>Website:</strong> <a href="https://www.vasavi.edu.in" target="_blank">vasavi.edu.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="O U COLLEGE OF TECHNOLOGY HYDERABAD">
+    <h3><b>O U COLLEGE OF TECHNOLOGY HYDERABAD [OUCT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1969 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 HYDERABAD, HYD</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹35000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/OUCT'">View OUCT</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('stmarys')"> St. Mary's Group of Institutions</label>
-  <div id="stmarys" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹90,000–₹1,20,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 25,000–40,000</p>
-    <p><strong>Website:</strong> <a href="https://www.stmarys.ac.in" target="_blank">stmarys.ac.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="VARDHAMAN COLLEGE OF ENGINEERING">
+    <h3><b>9 VARDHAMAN COLLEGE OF ENGINEERING [VMEG]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1999 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 SHAMSHABAD, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹140000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VMEG'">View VMEG</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('mvsr')"> MVSR Engineering College</label>
-  <div id="mvsr" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad (Nadergul)</p>
-    <p><strong>Fee:</strong> ₹90,000–₹1,10,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 20,000–35,000</p>
-    <p><strong>Website:</strong> <a href="https://www.mvsrec.edu.in" target="_blank">mvsrec.edu.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="MAHATMA GANDHI INSTITUTE OF TECHNOLOGY">
+    <h3><b>10 MAHATMA GANDHI INSTITUTE OF TECHNOLOGY [MGIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1997 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GANDIPET, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹160000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MGIT'">View MGIT</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('hitam')"> Hyderabad Institute of Technology & Management (HITAM)</label>
-  <div id="hitam" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 20,000–40,000</p>
-    <p><strong>Website:</strong> <a href="https://www.hitam.org" target="_blank">hitam.org</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="SREENIDHI INSTITUTE OF SCIENCE AND TECHNOLOGY">
+    <h3><b>11 SREENIDHI INSTITUTE OF SCIENCE AND TECHNOLOGY [SNIS]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1997 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹130000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/SNIS'">View SNIS</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('anurag')"> Anurag Group of Institutions</label>
-  <div id="anurag" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 15,000–35,000</p>
-    <p><strong>Website:</strong> <a href="https://www.anurag.edu.in" target="_blank">anurag.edu.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="B V RAJU INSTITUTE OF TECHNOLOGY">
+    <h3><b>12 B V RAJU INSTITUTE OF TECHNOLOGY [BVRI]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1997 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 NARSAPUR, MED</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹135000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/BVRI'">View BVRI</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('ace')"> ACE Engineering College</label>
-  <div id="ace" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹90,000–₹1,20,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main 2024: 30,000–50,000</p>
-    <p><strong>Website:</strong> <a href="https://www.aceengg.ac.in" target="_blank">aceengg.ac.in</a></p>
-  </div>
-</li>
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('sreenidhi')"> Sreenidhi Institute of Science and Technology</label>
-  <div id="sreenidhi" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹1,00,000–₹1,50,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 25,000–50,000</p>
-    <p><strong>Website:</strong> <a href="https://www.sreenidhi.edu.in" target="_blank">sreenidhi.edu.in</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="ANURAG UNIVERSITY (formerly ANURAG GROUP OF INSTITUTIONS)">
+    <h3><b>13 ANURAG UNIVERSITY (formerly ANURAG GROUP OF INSTITUTIONS) [CVSR]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> Anurag University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Private University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹135000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CVSR'">View CVSR</button></b>
+    </p>
+</div>
 
-<li>
-  <label><input type="radio" name="uni-info" onclick="showDetails('lords')"> Lord's Institute of Engineering and Technology (LIET)</label>
-  <div id="lords" class="details" style="display:none;">
-    <p><strong>Location:</strong> Hyderabad</p>
-    <p><strong>Fee:</strong> ₹80,000–₹1,00,000/year</p>
-    <p><strong>Cutoff (CSE - Gen):</strong> JEE Main: 40,000–70,000</p>
-    <p><strong>Website:</strong> <a href="https://www.lordsgroup.org" target="_blank">lordsgroup.org</a></p>
-  </div>
-</li>
+<div class="college-card" data-name="KAKATIYA INSTITUTE OF TECHNOLOGY AND SCIENCE">
+    <h3><b>14 KAKATIYA INSTITUTE OF TECHNOLOGY AND SCIENCE [KITS]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1980 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ KU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 WARANGAL, HNK</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹125000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/KITS'">View KITS</button></b>
+    </p>
+</div>
 
- 
+<div class="college-card" data-name="MVSR ENGINEERING COLLEGE">
+    <h3><b>15 MVSR ENGINEERING COLLEGE [MVSR]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1980 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 NADERGUL, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹130000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MVSR'">View MVSR</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="INSTITUTE OF AERONAUTICAL ENGINEERING">
+    <h3><b>16 INSTITUTE OF AERONAUTICAL ENGINEERING [IARE]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 DUNDIGAL, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹101000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/IARE'">View IARE</button></b>
+    </p>
+</div>
 
-    <!-- Private Colleges -->
-    <div id="private" class="college-list">
-      <ul>
-        <li>CMR College of Engineering & Technology</li>
-        <li>Sreenidhi Institute of Science and Technology</li>
-        <li>Vasavi College of Engineering</li>
-        <li>Gokaraju Rangaraju Institute</li>
-        <li>Malla Reddy Engineering College</li>
-      </ul>
-    </div>
+<div class="college-card" data-name="BVRIT COLLEGE OF ENGINEERING FOR WOMEN">
+    <h3><b>17 BVRIT COLLEGE OF ENGINEERING FOR WOMEN [BVRW]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 BACHUPALLY, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹120000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/BVRW'">View BVRW</button></b>
+    </p>
+</div>
 
-    <!-- Government Colleges -->
-    <div id="government" class="college-list">
-      <ul>
-        <li>Government College of Engineering, Kothagudem</li>
-        <li>University College of Engineering, Osmania University</li>
-        <li>University College of Engineering, Kakatiya University</li>
-        <li>RGUKT Basar</li>
-      </ul>
-    </div>
+<div class="college-card" data-name="G NARAYNAMMA INSTITUTE OF TECHNOLOGY AND SCIENCE">
+    <h3><b>18 G NARAYNAMMA INSTITUTE OF TECHNOLOGY AND SCIENCE [GNTW]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1997 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 SHAIKPET, HYD</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹100000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/GNTW'">View GNTW</button></b>
+    </p>
+</div>
 
-    <!-- Affiliated Colleges -->
-    <div id="affiliated" class="college-list">
-      <ul>
-        <li>JBIT Hyderabad</li>
-        <li>Aurora's Technological Institute</li>
-        <li>Sri Indu College of Engineering</li>
-        <li>Stanley College of Engineering for Women</li>
-        <li>Vardhaman College of Engineering</li>
-      </ul>
-    </div>
-  </div>
+<div class="college-card" data-name="KESHAV MEMORIAL INSTITUTE OF TECHNOLOGY">
+    <h3><b>19 KESHAV MEMORIAL INSTITUTE OF TECHNOLOGY [KMIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2007 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 NARAYANAGU, HYD</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹103000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/KMIT'">View KMIT</button></b>
+    </p>
+</div>
 
-  <script>
-    // Main tab logic
-    const tabs = document.querySelectorAll(".tab");
-    const lists = document.querySelectorAll(".college-list");
+<div class="college-card" data-name="GEETANJALI COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>20 GEETANJALI COLLEGE OF ENGINEERING AND TECHNOLOGY [GCTC]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KEESARA, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹120000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/GCTC'">View GCTC</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="MALLA REDDY ENGINEERING COLLEGE">
+    <h3><b>21 MALLA REDDY ENGINEERING COLLEGE [MREC]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MAISAMMAGU, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹115000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MREC'">View MREC</button></b>
+    </p>
+</div>
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
+<div class="college-card" data-name="GURU NANAK INSTITUTE OF TECHNOLOGY">
+    <h3><b>22 GURU NANAK INSTITUTE OF TECHNOLOGY [GNIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 IBRAHIMPAT, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹120000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/GNIT'">View GNIT</button></b>
+    </p>
+</div>
 
-        lists.forEach(list => list.classList.remove("active"));
-        document.getElementById(tab.dataset.target).classList.add("active");
+<div class="college-card" data-name="VAAGDEVI COLLEGE OF ENGINEERING">
+    <h3><b>23 VAAGDEVI COLLEGE OF ENGINEERING [VAGE]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1998 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 WARANGAL, WGL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹105000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VAGE'">View VAGE</button></b>
+    </p>
+</div>
 
-        document.getElementById("searchInput").value = "";
-        filterColleges("");
-      });
-    });
+<div class="college-card" data-name="VIDYAJYOTHI INSTITUTE OF TECHNOLOGY">
+    <h3><b>24 VIDYAJYOTHI INSTITUTE OF TECHNOLOGY [VJIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1999 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MOINABAD, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹115000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VJIT'">View VJIT</button></b>
+    </p>
+</div>
 
-    // Sub-tab logic in Universities
-    const subTabs = document.querySelectorAll(".sub-tab");
-    const subLists = document.querySelectorAll(".sub-list");
+<div class="college-card" data-name="NALLA MALLA REDDY ENGINEERING COLLEGE">
+    <h3><b>25 NALLA MALLA REDDY ENGINEERING COLLEGE [NREC]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹95000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/NREC'">View NREC</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="MLR INSTITUTE OF TECHNOLOGY">
+    <h3><b>26 MLR INSTITUTE OF TECHNOLOGY [MLID]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 DUNDIGAL, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹96000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MLID'">View MLID</button></b>
+    </p>
+</div>
 
-    subTabs.forEach(subTab => {
-      subTab.addEventListener("click", () => {
-        subTabs.forEach(t => t.classList.remove("active"));
-        subTab.classList.add("active");
+<div class="college-card" data-name="KU COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>27 KU COLLEGE OF ENGINEERING AND TECHNOLOGY [KUWL]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2009 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ KU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 WARANGAL, HNK</b>
+    </p>
+    <p>
+        <b>No NBA</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹35000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/KUWL'">View KUWL</button></b>
+    </p>
+</div>
 
-        subLists.forEach(list => list.style.display = "none");
-        document.getElementById(subTab.dataset.sub).style.display = "block";
+<div class="college-card" data-name="CMR ENGINEERING COLLEGE">
+    <h3><b>28 CMR ENGINEERING COLLEGE [CMRN]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KANDLAKOYA, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹75000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CMRN'">View CMRN</button></b>
+    </p>
+</div>
 
-        filterColleges(document.getElementById("searchInput").value.toLowerCase());
-      });
-    });
+<div class="college-card" data-name="CMR COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>29 CMR COLLEGE OF ENGINEERING AND TECHNOLOGY [CMRK]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KANDLAKOYA, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹115000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CMRK'">View CMRK</button></b>
+    </p>
+</div>
 
-    // Search functionality
-    document.getElementById("searchInput").addEventListener("input", function () {
-      filterColleges(this.value.toLowerCase());
-    });
+<div class="college-card" data-name="ST MARTINS ENGINEERING COLLEGE">
+    <h3><b>30 ST MARTINS ENGINEERING COLLEGE [MRTN]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 DHULAPALLY, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹100000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MRTN'">View MRTN</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="MALLA REDDY COLLEGE OF ENGINEERING TECHNOLOGY">
+    <h3><b>31 MALLA REDDY COLLEGE OF ENGINEERING TECHNOLOGY [MLRD]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2004 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MYSAMMAGUD, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹110000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MLRD'">View MLRD</button></b>
+    </p>
+</div>
 
-    function filterColleges(query) {
-      let activeSection = document.querySelector(".college-list.active");
+<div class="college-card" data-name="CMR INSTITUTE OF TECHNOLOGY">
+    <h3><b>32 CMR INSTITUTE OF TECHNOLOGY [CMRM]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KANDLAKOYA, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹110000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CMRM'">View CMRM</button></b>
+    </p>
+</div>
 
-      if (activeSection.id === "universities") {
-        const activeSub = Array.from(subLists).find(div => div.style.display !== "none");
-        const items = activeSub.querySelectorAll("ul li");
-        items.forEach(item => {
-          item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
-        });
-      } else {
-        const items = activeSection.querySelectorAll("ul li");
-        items.forEach(item => {
-          item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
-        });
-      }
-    }
+<div class="college-card" data-name="A C E ENGINEERING COLLEGE">
+    <h3><b>33 A C E ENGINEERING COLLEGE [ACEG]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2007 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹110000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/ACEG'">View ACEG</button></b>
+    </p>
+</div>
 
-    function showDetails(id) {
-      document.querySelectorAll('.details').forEach(div => div.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+<div class="college-card" data-name="MARRI LAXMAN REDDY INSTITUTE OF TECHNOLOGY AND MANAGEMENT">
+    <h3><b>34 MARRI LAXMAN REDDY INSTITUTE OF TECHNOLOGY AND MANAGEMENT [MLRS]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2009 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 DUNDIGAL, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹100000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MLRS'">View MLRS</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="KGREDDY COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>35 KGREDDY COLLEGE OF ENGINEERING AND TECHNOLOGY [KGRH]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MOINABAD, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹100000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/KGRH'">View KGRH</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="GURU NANAK INSTITUTIONS TECHNICAL CAMPUS">
+    <h3><b>36 GURU NANAK INSTITUTIONS TECHNICAL CAMPUS [GURU]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 IBRAHIMPAT, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹120000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/GURU'">View GURU</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="CMR TECHNICAL CAMPUS">
+    <h3><b>37 CMR TECHNICAL CAMPUS [CMRG]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2009 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KANDLAKOYA, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹105000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/CMRG'">View CMRG</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="MALLA REDDY ENGINEERING COLLEGE FOR WOMEN">
+    <h3><b>38 MALLA REDDY ENGINEERING COLLEGE FOR WOMEN [MRCW]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MAISAMMAGU, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹95000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MRCW'">View MRCW</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="SRI INDU COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>39 SRI INDU COLLEGE OF ENGINEERING AND TECHNOLOGY [INDU]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 IBRAHIMPAT, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹115000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/INDU'">View INDU</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="HYDERABAD INSTITUTE OF TECHNOLOGY AND MANAGEMENT">
+    <h3><b>40 HYDERABAD INSTITUTE OF TECHNOLOGY AND MANAGEMENT [HITM]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MEDCHAL, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹90000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/HITM'">View HITM</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="JNTUH UNIVERSITY COLLEGE OF ENGINEERING JAGTIAL">
+    <h3><b>41 JNTUH UNIVERSITY COLLEGE OF ENGINEERING JAGTIAL [JNKR]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2007 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 JAGITIAL, JTL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹50000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/JNKR'">View JNKR</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="KOMMURI PRATAP REDDY INSTITUTE OF TECHNOLOGY">
+    <h3><b>42 KOMMURI PRATAP REDDY INSTITUTE OF TECHNOLOGY [KPRT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹90000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/KPRT'">View KPRT</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="STANLEY COLLEGE OF ENGINEERING AND TECHNOLOGY FOR WOMEN">
+    <h3><b>43 STANLEY COLLEGE OF ENGINEERING AND TECHNOLOGY FOR WOMEN [STLW]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 ABIDS, HYD</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹85000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/STLW'">View STLW</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="NALLA NARASIMHA REDDY EDUCATIONAL SOCIETY GROUP OF INSTITUTIONS">
+    <h3><b>44 NALLA NARASIMHA REDDY EDUCATIONAL SOCIETY GROUP OF INSTITUTIONS [NNRG]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2009 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹95000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/NNRG'">View NNRG</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="TEEGALA KRISHNA REDDY ENGINEERING COLLEGE">
+    <h3><b>45 TEEGALA KRISHNA REDDY ENGINEERING COLLEGE [TKEM]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MIRPET, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹80000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/TKEM'">View TKEM</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="T K R COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>46 T K R COLLEGE OF ENGINEERING AND TECHNOLOGY [TKRC]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MIRPET, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹85000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/TKRC'">View TKRC</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="ST PETERS ENGINEERING COLLEGE">
+    <h3><b>47 ST PETERS ENGINEERING COLLEGE [SPEC]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2007 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MEDCHAL, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹96000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/SPEC'">View SPEC</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="SREYAS INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>48 SREYAS INSTITUTE OF ENGINEERING AND TECHNOLOGY [SRYS]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2011 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 NAGOLE, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹103000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/SRYS'">View SRYS</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="SRI INDU INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>49 SRI INDU INSTITUTE OF ENGINEERING AND TECHNOLOGY [INDI]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2006 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 IBRAHIMPAT, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹95000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/INDI'">View INDI</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="J B INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>50 J B INSTITUTE OF ENGINEERING AND TECHNOLOGY [JBIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1998 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 YENKAPALLY, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹110000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/JBIT'">View JBIT</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="VIGNANA BHARATI INSTITUTE OF TECHNOLOGY">
+    <h3><b>51 VIGNANA BHARATI INSTITUTE OF TECHNOLOGY [VBIT]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2004 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹85000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VBIT'">View VBIT</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="MALLA REDDY INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>52 MALLA REDDY INSTITUTE OF ENGINEERING AND TECHNOLOGY [MRET]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2007 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MAISAMMAGU, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹70000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/MRET'">View MRET</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="NARSIMHA REDDY ENGINEERING COLLEGE">
+    <h3><b>53 NARSIMHA REDDY ENGINEERING COLLEGE [NRCM]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2009 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 MAISAMMAGU, MDL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹70000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/NRCM'">View NRCM</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="METHODIST COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>54 METHODIST COLLEGE OF ENGINEERING AND TECHNOLOGY [METH]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 ABIDS, HYD</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹78000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/METH'">View METH</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="JOGINPALLY B R ENGINEERING COLLEGE">
+    <h3><b>55 JOGINPALLY B R ENGINEERING COLLEGE [JOGI]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2002 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 YENKAPALLY, RR</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B++" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹87000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/JOGI'">View JOGI</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="SAMSKRUTHI COLLEGE OF ENGINEERINGAND TECHNOLOGY">
+    <h3><b>56 SAMSKRUTHI COLLEGE OF ENGINEERINGAND TECHNOLOGY [SMSK]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 GHATKESAR, MDL</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹72000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/SMSK'">View SMSK</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="HOLY MARY INSTITUTE OF TECHNOLOGY SCIENCE">
+    <h3><b>57 HOLY MARY INSTITUTE OF TECHNOLOGY SCIENCE [HOLY]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KEESARA, MDL</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "A" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹66000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/HOLY'">View HOLY</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="ANURAG ENGINEERING COLLGE">
+    <h3><b>58 ANURAG ENGINEERING COLLGE [ANRK]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KODAD, SRP</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹90000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/ANRK'">View ANRK</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="K U COLLEGE OF ENGINEERING KOTHAGUDEM">
+    <h3><b>59 K U COLLEGE OF ENGINEERING KOTHAGUDEM [KUCE]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1994 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ KU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 KOTHAGUDEM, KGM</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹35000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/KUCE'">View KUCE</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="JAYAMUKHI INSTITUTE OF TECHNOLOGY AND SCIENCES">
+    <h3><b>60 JAYAMUKHI INSTITUTE OF TECHNOLOGY AND SCIENCES [JAYA]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 NARSAMPET, WGL</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹60000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/JAYA'">View JAYA</button></b>
+    </p>
+</div>
+<div class="college-card" data-name="VAAGDEVI ENGINEERING COLLEGE">
+    <h3><b>61 VAAGDEVI ENGINEERING COLLEGE [VGWL]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 WARANGAL, HNK</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹58000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/VGWL'">View VGWL</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="LORDS INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>62 LORDS INSTITUTE OF ENGINEERING AND TECHNOLOGY [LRDS]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 HIMAYATSAG, RR</b>
+    </p>
+    <p>
+        <b>✅ NBA Accredited</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹93000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/LRDS'">View LRDS</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="NAWAB SHAH ALAM KHAN COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>63 NAWAB SHAH ALAM KHAN COLLEGE OF ENGINEERING AND TECHNOLOGY [NAWB]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ OU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 NEW MALAKP, HYD</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: green;"><b>NAAC "B+" Grade</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹60000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/NAWB'">View NAWB</button></b>
+    </p>
+</div>
+
+<div class="college-card" data-name="SHADHAN COLLEGE OF ENGINEERING AND TECHNOLOGY">
+    <h3><b>64 SHADHAN COLLEGE OF ENGINEERING AND TECHNOLOGY [SCET]</b></h3>
+    <p>
+        <b>Estd:</b> 🗓️ 1995 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Affiliation:</b> 🏛️ JNTUH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Type:</b> Autonomous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>📍 PEERANCHER, RR</b>
+    </p>
+    <p>
+        <span><b>No NBA</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><b>No NAAC Available</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Fee:</b> ₹50000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b><button onclick="window.location.href='https://eduvale.in/ts-college-list/college/SCET'">View SCET</button></b>
+    </p>
+</div>
 </body>
 </html>
